@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="loginScene" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.laundry.laundry.controllers.LoginController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ef4040" height="400.0" stroke="#ef4040" strokeType="INSIDE" width="227.0" />
+      <VBox layoutX="269.0" layoutY="149.0" prefHeight="50.0" prefWidth="265.0">
+         <children>
+            <Label text="Username" />
+            <TextField fx:id="tf_username" prefHeight="26.0" prefWidth="222.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="269.0" layoutY="223.0" prefHeight="50.0" prefWidth="265.0">
+         <children>
+            <Label text="Password" />
+            <PasswordField fx:id="tf_password" />
+         </children>
+      </VBox>
+      <Button layoutX="483.0" layoutY="294.0" mnemonicParsing="false" onAction="#loginAction" text="Login" />
+      <Label layoutX="314.0" layoutY="23.0" text="Login" textFill="#ef4040">
+         <font>
+            <Font name="Arial Bold" size="64.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

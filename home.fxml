@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="homeScene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="735.0" prefWidth="1134.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.laundry.laundry.controllers.HomeController">
+    <TabPane prefHeight="735.0" prefWidth="1134.0" tabClosingPolicy="UNAVAILABLE">
+        <Tab text="Dashboard">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <HBox layoutX="117.0" layoutY="82.0" prefHeight="116.0" prefWidth="901.0" spacing="60.0">
+                    <StackPane prefHeight="150.0" prefWidth="200.0">
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3081d0" height="109.0" stroke="BLACK" strokeType="INSIDE" width="258.0" />
+                        <Label text="Jumlah Antrian" textFill="WHITE" StackPane.alignment="BOTTOM_LEFT">
+                            <padding>
+                                <Insets bottom="20.0" left="20.0" />
+                            </padding>
+                            <font>
+                                <Font name="Consolas" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lbl_jml_antrian" layoutX="90.0" layoutY="58.0" text="50" textFill="WHITE" StackPane.alignment="TOP_LEFT">
+                            <padding>
+                                <Insets left="20.0" top="20.0" />
+                            </padding>
+                            <font>
+                                <Font name="Consolas Bold" size="25.0" />
+                            </font>
+                        </Label>
+                    </StackPane>
+                    <StackPane layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="200.0">
+                        <children>
+                            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffc436" height="109.0" stroke="BLACK" strokeType="INSIDE" width="258.0" />
+                            <Label text="Antrian Selesai" textFill="WHITE" StackPane.alignment="BOTTOM_LEFT">
+                                <padding>
+                                    <Insets bottom="20.0" left="20.0" />
+                                </padding>
+                                <font>
+                                    <Font name="Consolas" size="20.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="lbl_antrian_selesai" layoutX="90.0" layoutY="58.0" text="50" textFill="WHITE" StackPane.alignment="TOP_LEFT">
+                                <padding>
+                                    <Insets left="20.0" top="20.0" />
+                                </padding>
+                                <font>
+                                    <Font name="Consolas Bold" size="25.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </StackPane>
+                    <StackPane layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="200.0">
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#be3144" height="109.0" stroke="BLACK" strokeType="INSIDE" width="258.0" />
+                        <Label text="Pendapatan" textFill="WHITE" StackPane.alignment="BOTTOM_LEFT">
+                            <padding>
+                                <Insets bottom="20.0" left="20.0" />
+                            </padding>
+                            <font>
+                                <Font name="Consolas" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lbl_pendapatan" layoutX="90.0" layoutY="58.0" text="50" textFill="WHITE" StackPane.alignment="TOP_LEFT">
+                            <padding>
+                                <Insets left="20.0" top="20.0" />
+                            </padding>
+                            <font>
+                                <Font name="Consolas Bold" size="25.0" />
+                            </font>
+                        </Label>
+                    </StackPane>
+                </HBox>
+                <Button layoutX="1062.0" layoutY="659.0" mnemonicParsing="false" onAction="#refreshDashboard" text="Refresh" />
+            </AnchorPane>
+        </Tab>
+        <Tab text="Daftar Laundry">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <TableView fx:id="tbl_laundry" layoutX="16.0" layoutY="25.0" prefHeight="506.0" prefWidth="1103.0">
+                    <columns>
+                        <TableColumn fx:id="col_id" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="col_pemesan" prefWidth="199.0" text="Nama Pemesan" />
+                        <TableColumn fx:id="col_hp" prefWidth="223.0" text="No HP" />
+                        <TableColumn fx:id="col_berat" prefWidth="111.0" text="Berat" />
+                        <TableColumn fx:id="col_harga" prefWidth="234.0" text="Total Harga" />
+                        <TableColumn fx:id="col_tgl_order" prefWidth="260.0" text="Tanggal Order" />
+                    </columns>
+                </TableView>
+                <HBox layoutX="16.0" layoutY="554.0" prefHeight="104.0" prefWidth="799.0" spacing="30.0">
+                    <children>
+                        <VBox prefHeight="135.0" prefWidth="239.0">
+                            <children>
+                                <VBox prefHeight="64.0" prefWidth="277.0">
+                                    <children>
+                                        <Label text="Nama Pemesan" />
+                                        <TextField fx:id="tf_nama_pemesan" />
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="64.0" prefWidth="277.0">
+                                    <children>
+                                        <Label text="No Hp" />
+                                        <TextField fx:id="tf_nohp" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="135.0" prefWidth="239.0">
+                            <children>
+                                <VBox prefHeight="64.0" prefWidth="277.0">
+                                    <children>
+                                        <Label text="Berat" />
+                                        <TextField fx:id="tf_berat" />
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="64.0" prefWidth="277.0">
+                                    <children>
+                                        <Label text="Tanggal Order" />
+                                        <DatePicker fx:id="tf_tgl_order" prefHeight="31.0" prefWidth="245.0" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="104.0" prefWidth="238.0">
+                            <children>
+                                <Label text="Status" />
+                                <ComboBox fx:id="cb_status" prefHeight="31.0" prefWidth="222.0" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox layoutX="889.0" layoutY="556.0" prefHeight="100.0" prefWidth="181.0" spacing="40.0">
+                    <children>
+                        <VBox prefHeight="84.0" prefWidth="72.0" spacing="20.0">
+                            <children>
+                                <Button fx:id="btn_edit" mnemonicParsing="false" onAction="#editAction" text="Edit" />
+                                <Button fx:id="btn_delete" mnemonicParsing="false" onAction="#deleteAction" text="Delete" />
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="84.0" prefWidth="72.0" spacing="20.0">
+                            <children>
+                                <Button fx:id="btn_save" mnemonicParsing="false" onAction="#saveAction" text="Save" />
+                                <Button fx:id="btn_clear" mnemonicParsing="false" onAction="#clearAction" text="Clear" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <Label fx:id="id_antrian" layoutX="14.0" layoutY="672.0" visible="false" />
+            </AnchorPane>
+        </Tab>
+        <Tab text="Atrian Selesai">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <TableView fx:id="tbl_antrian_selesai" layoutX="16.0" layoutY="23.0" prefHeight="506.0" prefWidth="1103.0">
+                            <columns>
+                                <TableColumn fx:id="col_id_selesai" prefWidth="75.0" text="ID" />
+                                <TableColumn fx:id="col_nama_selesai" prefWidth="199.0" text="Nama Pemesan" />
+                                <TableColumn fx:id="col_hp_selesai" prefWidth="223.0" text="No HP" />
+                                <TableColumn fx:id="col_berat_selesai" prefWidth="111.0" text="Berat" />
+                                <TableColumn fx:id="col_harga_selesai" prefWidth="234.0" text="Total Harga" />
+                                <TableColumn fx:id="col_tgl_order_selesai" prefWidth="260.0" text="Tanggal Order" />
+                            </columns>
+                        </TableView>
+                        <HBox layoutX="16.0" layoutY="553.0" prefHeight="104.0" prefWidth="799.0" spacing="30.0">
+                            <children>
+                                <VBox prefHeight="135.0" prefWidth="239.0">
+                                    <children>
+                                        <VBox prefHeight="64.0" prefWidth="277.0">
+                                            <children>
+                                                <Label text="Nama Pemesan" />
+                                                <TextField fx:id="tf_nama_pemesan_selesai" />
+                                            </children>
+                                        </VBox>
+                                        <VBox prefHeight="64.0" prefWidth="277.0">
+                                            <children>
+                                                <Label text="No Hp" />
+                                                <TextField fx:id="tf_nohp_selesai" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="135.0" prefWidth="239.0">
+                                    <children>
+                                        <VBox prefHeight="64.0" prefWidth="277.0">
+                                            <children>
+                                                <Label text="Berat" />
+                                                <TextField fx:id="tf_berat_selesai" />
+                                            </children>
+                                        </VBox>
+                                        <VBox prefHeight="64.0" prefWidth="277.0">
+                                            <children>
+                                                <Label text="Tanggal Order" />
+                                                <DatePicker fx:id="tf_tgl_order_selesai" prefHeight="31.0" prefWidth="245.0" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="104.0" prefWidth="238.0">
+                                    <children>
+                                        <Label text="Status" />
+                                        <ComboBox fx:id="cb_status_selesai" prefHeight="31.0" prefWidth="222.0" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                        <HBox layoutX="904.0" layoutY="555.0" prefHeight="100.0" prefWidth="181.0" spacing="40.0">
+                            <children>
+                                <VBox prefHeight="84.0" prefWidth="72.0" spacing="20.0">
+                                    <children>
+                                        <Button fx:id="btn_edit_selesai" mnemonicParsing="false" onAction="#editActionSelesai" text="Edit" />
+                                        <Button fx:id="btn_delete_selesai" mnemonicParsing="false" onAction="#deleteActionsSelesai" text="Delete" />
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="84.0" prefWidth="72.0" spacing="20.0">
+                                    <children>
+                                        <Button fx:id="btn_clear_selesai" mnemonicParsing="false" onAction="#clearActionSelesai" text="Clear" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                        <Label fx:id="id_pesanan_selesai" layoutX="16.0" layoutY="672.0" visible="false" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Setting Harga">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ef4040" height="698.0" stroke="#ef4040" strokeType="INSIDE" width="494.0" />
+                        <HBox layoutX="528.0" layoutY="40.0" prefHeight="100.0" prefWidth="572.0">
+                            <children>
+                                <Label prefHeight="48.0" prefWidth="188.0" text="Harga : ">
+                                    <font>
+                                        <Font name="Consolas" size="40.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="lbl_harga_laundry" layoutX="10.0" layoutY="10.0" prefHeight="48.0" prefWidth="161.0" text="4000">
+                                    <font>
+                                        <Font name="Consolas" size="40.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="100.0" layoutY="10.0" prefHeight="48.0" prefWidth="186.0" text="/Kg">
+                                    <font>
+                                        <Font name="Consolas" size="40.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <VBox layoutX="528.0" layoutY="212.0" prefHeight="67.0" prefWidth="448.0">
+                            <children>
+                                <Label text="Masukkan Harga" />
+                                <TextField fx:id="tf_harga" prefHeight="31.0" prefWidth="306.0" />
+                            </children>
+                        </VBox>
+                        <Button layoutX="911.0" layoutY="305.0" mnemonicParsing="false" onAction="#simpanHarga" text="Simpan" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Profile">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ef4040" height="698.0" stroke="#ef4040" strokeType="INSIDE" width="494.0" />
+                        <Button layoutX="1038.0" layoutY="645.0" mnemonicParsing="false" onAction="#logOutAction" text="Logout" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+    </TabPane>
+</AnchorPane>
